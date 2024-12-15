@@ -98,8 +98,7 @@ ignore:
 ## Themes: https://hexo.io/themes/
 theme: landscape
 
-# for hexo deployment to github
+# Deployment
+## Docs: https://hexo.io/docs/one-command-deployment
 deploy:
-  type: git
-  repo: https://github.com/JohnEraHistory/JohnEraHistory.github.io
-  branch: main
+  type: ''
