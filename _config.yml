@@ -3,13 +3,13 @@
 ## Source: https://github.com/hexojs/hexo/
 
 # Site
-title: THE TOLD AND UNTOLD STORIES OF WW2, THE COLD WAR, AND AMERICA'S OTHER CONFLICTS. THE PEOPLE INVOLVED, THE DECISIONS MADE, THE SECRET MISSIONS, WHAT REALLY HAPPENED AND WHY.
+title: John's Eras and Histories
 subtitle: '1941 - PRESENT DAY'
-description: ''
-keywords:
+description: 'THE TOLD AND UNTOLD STORIES OF WW2, THE COLD WAR, AND AMERICA'S OTHER CONFLICTS. THE PEOPLE INVOLVED, THE DECISIONS MADE, THE SECRET MISSIONS AND WHAT REALLY HAPPENED AND WHY.'
+keywords: war, veteran, ww2, world, war, two, united states, cold war,
 author: Hunter T.
 language: en
-timezone: ''
+timezone: 'EST'
 
 # URL
 ## Set your site url here. For example, if you use GitHub Page, set url as 'https://username.github.io/project'
