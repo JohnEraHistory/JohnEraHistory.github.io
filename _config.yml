@@ -3,13 +3,13 @@
 ## Source: https://github.com/hexojs/hexo/
 
 # Site
-title: John's Eras and Histories
-subtitle: '1941 - PRESENT DAY'
-description: 'THE TOLD AND UNTOLD STORIES OF WW2, THE COLD WAR, AND AMERICA'S OTHER CONFLICTS. THE PEOPLE INVOLVED, THE DECISIONS MADE, THE SECRET MISSIONS AND WHAT REALLY HAPPENED AND WHY.'
-keywords: war, veteran, ww2, world, war, two, united states, cold war,
-author: Hunter T.
+title: John's Era History
+subtitle: ''
+description: ''
+keywords:
+author: Hunter T. [HuLaTin]
 language: en
-timezone: 'EST'
+timezone: 'est'
 
 # URL
 ## Set your site url here. For example, if you use GitHub Page, set url as 'https://username.github.io/project'
@@ -96,9 +96,18 @@ ignore:
 # Extensions
 ## Plugins: https://hexo.io/plugins/
 ## Themes: https://hexo.io/themes/
-theme: landscape
+theme: hueman
 
 # Deployment
 ## Docs: https://hexo.io/docs/one-command-deployment
 # deploy:
 #   type: ''
+
+deploy:
+  type: git
+  repo: https://github.com/username/johnerahistory.github.io.git
+  branch: main
+
+menu:
+  Home: /
+  Articles: /articles/
