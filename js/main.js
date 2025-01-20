@@ -16,7 +16,6 @@
                 $(this).after('<span class="caption">' + this.alt + '</span>');
             }
 
-            // 对于已经包含在链接内的图片不适用lightGallery
             if ($(this).parent().prop("tagName") !== 'A') {
                 $(this).wrap('<a href="' + this.src + '" title="' + this.alt + '" class="gallery-item"></a>');
             }
@@ -42,6 +41,7 @@
     }
 
     // Sidebar expend
+    /*
     $('#sidebar .sidebar-toggle').on('click', function () {
         if($('#sidebar').hasClass('expend')) {
             $('#sidebar').removeClass('expend');
@@ -49,7 +49,7 @@
             $('#sidebar').addClass('expend');
         }
     });
-
+*/
 
     // Remove extra main nav wrap
     $('.main-nav-list > li').unwrap();

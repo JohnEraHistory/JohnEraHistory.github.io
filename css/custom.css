@@ -1,0 +1,24 @@
+/* Style the Articles menu item as a button */
+.nav-item a[href="/articles/"] {
+    display: inline-block;
+    padding: 10px 15px;
+    background-color: #007bff; /* Button background color */
+    color: #ffffff;            /* Button text color */
+    border-radius: 5px;        /* Rounded corners */
+    text-decoration: none;     /* Remove underline */
+  }
+  
+  .nav-item a[href="/articles/"]:hover {
+    background-color: #0056b3; /* Darker shade on hover */
+  }
+
+  .sidebar {
+    display: none !important;
+  }
+
+  .main-content {
+    width: 150% !important;
+    margin: 0 auto;
+    padding: 0 20px; /* Optional: Add some padding for better readability */
+  }
+
