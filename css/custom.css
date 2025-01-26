@@ -22,3 +22,27 @@
     padding: 0 20px; /* Optional: Add some padding for better readability */
   }
 
+  .footer-credit {
+    text-align: center;
+    padding: 15px;
+    background-color: #f4f4f4; /* Light gray background */
+    font-size: 14px;
+    color: #333; /* Dark text color */
+  }
+  
+  .footer-credit a {
+    color: #0366d6; /* GitHub blue color */
+    text-decoration: none;
+    font-weight: bold;
+  }
+  
+  .footer-credit a:hover {
+    text-decoration: underline;
+  }
+  
+  .footer-credit img {
+    width: 20px; /* Same size as inline styles */
+    vertical-align: middle;
+    margin: 0 5px;
+  }
+  

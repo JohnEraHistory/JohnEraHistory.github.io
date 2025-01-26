@@ -247,12 +247,12 @@ code {
 .logo {
   display: block;
   padding: 10px 0;
-  width: 175px;
-  height: 175px;
+  width: 150px;
+  height: 150px;
   background-image: url("/images/SiteIcon.png");
   background-position: 0px 10px;
   background-repeat: no-repeat;
-  background-size: 175px 175px;
+  background-size: 150px 150px;
 }
 .main-body {
   margin-top: -60px;
@@ -287,6 +287,32 @@ code {
 }
 .footer-credit a:hover {
   text-decoration: underline;
+}
+.green-box {
+  display: inline-block;
+  background-color: #4caf50;
+  color: #fff;
+  padding: 15px 25px;
+  border-radius: 25px;
+  font-size: 18px;
+  font-weight: bold;
+  text-align: center;
+  text-decoration: none;
+  -webkit-transition: all 0.3s ease;
+  -moz-transition: all 0.3s ease;
+  -ms-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+  -webkit-box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+.green-box:hover {
+  background-color: #45a049;
+  -webkit-box-shadow: 0 6px 10px rgba(0,0,0,0.15);
+  box-shadow: 0 6px 10px rgba(0,0,0,0.15);
+  -webkit-transform: translateY(-2px);
+  -moz-transform: translateY(-2px);
+  -ms-transform: translateY(-2px);
+  transform: translateY(-2px);
 }
 #main {
   width: 100%;
@@ -360,7 +386,7 @@ code {
 #header-title .subtitle {
   font-size: 16px;
   font-style: italic;
-  line-height: 185px;
+  line-height: 160px;
   color: rgba(255,255,255,0.7);
   text-shadow: 0 1px rgba(0,0,0,0.2);
 }
@@ -1271,9 +1297,9 @@ a.article-title:hover {
   line-height: 22px;
 }
 #footer .logo {
-  width: 140px;
-  height: 140px;
-  background-size: 140px 140px;
+  width: 120px;
+  height: 120px;
+  background-size: 120px 120px;
 }
 i.icon {
   display: inline-block;
