@@ -1,48 +1,179 @@
 /* Style the Articles menu item as a button */
 .nav-item a[href="/articles/"] {
-    display: inline-block;
-    padding: 10px 15px;
-    background-color: #007bff; /* Button background color */
-    color: #ffffff;            /* Button text color */
-    border-radius: 5px;        /* Rounded corners */
-    text-decoration: none;     /* Remove underline */
+  display: inline-block;
+  padding: 10px 15px;
+  background-color: #007bff; /* Button background color */
+  color: #ffffff; /* Button text color */
+  border-radius: 5px; /* Rounded corners */
+  text-decoration: none; /* Remove underline */
+}
+
+.nav-item a[href="/articles/"]:hover {
+  background-color: #0056b3; /* Darker shade on hover */
+}
+
+/* Hide the sidebar completely */
+.sidebar {
+  display: none !important;
+  width: 0 !important;
+  max-width: 0 !important;
+}
+
+/* Ensure main content takes full width */
+.main-content {
+  width: 100% !important;
+  max-width: 1200px; /* Keep a reasonable max-width */
+  margin: 0 auto;
+  padding: 0 20px; /* Adds some space for better readability */
+}
+
+/* Footer styling */
+.footer-credit {
+  text-align: center;
+  padding: 15px;
+  background-color: #f4f4f4; /* Light gray background */
+  font-size: 14px;
+  color: #333; /* Dark text color */
+}
+
+.footer-credit a {
+  color: #0366d6; /* GitHub blue color */
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.footer-credit a:hover {
+  text-decoration: underline;
+}
+
+.footer-credit img {
+  width: 20px; /* Adjusts icon size */
+  vertical-align: middle;
+  margin: 0 5px;
+}
+
+/* Center the logo properly */
+.logo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.logo img {
+  display: block;
+  margin: 0 auto;
+}
+
+/* FLEXBOX TABLE - Ensures everything stays on one line */
+.flex-table {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-width: 1200px; /* Prevents excessive stretching */
+  margin: 0 auto;
+}
+
+/* Row structure */
+.flex-row {
+  display: flex;
+  width: 100%;
+  justify-content: space-between; /* Ensures even spacing */
+  border-bottom: 1px solid #ddd;
+  padding: 10px 0;
+  align-items: center; /* Aligns text vertically */
+}
+
+/* Header row */
+.flex-row.header {
+  font-weight: bold;
+  background-color: #f4f4f4;
+  padding: 15px 0;
+}
+
+/* Cell structure */
+.flex-cell {
+  padding: 10px;
+  white-space: nowrap !important; /* Prevents text from wrapping */
+  overflow: hidden !important;
+  text-overflow: ellipsis !important; /* Adds '...' for long text */
+  flex-grow: 1; /* Allows columns to expand */
+}
+
+/* Adjust column widths */
+.title {
+  flex: 2.5; /* Gives Title more space */
+  min-width: 200px;
+}
+
+.description {
+  flex: 4; /* Expands dynamically */
+  min-width: 400px;
+}
+
+.link {
+  flex: 1; /* Keeps links small */
+  text-align: center;
+  min-width: 100px;
+}
+
+/* Responsive Design - Adjusts for Mobile */
+@media (max-width: 768px) {
+  .flex-row {
+    flex-wrap: wrap;
   }
   
-  .nav-item a[href="/articles/"]:hover {
-    background-color: #0056b3; /* Darker shade on hover */
+  .description {
+    flex: 100%; /* Description takes full width */
   }
 
-  .sidebar {
-    display: none !important;
-  }
-
-  .main-content {
-    width: 150% !important;
-    margin: 0 auto;
-    padding: 0 20px; /* Optional: Add some padding for better readability */
-  }
-
-  .footer-credit {
+  .link {
+    flex: 100%;
     text-align: center;
-    padding: 15px;
-    background-color: #f4f4f4; /* Light gray background */
-    font-size: 14px;
-    color: #333; /* Dark text color */
   }
-  
-  .footer-credit a {
-    color: #0366d6; /* GitHub blue color */
-    text-decoration: none;
-    font-weight: bold;
+}
+
+/* HEXO TABLE FIX - Ensures Hexo-generated tables expand properly */
+.post-content table {
+  width: 100% !important;
+  max-width: 100% !important;
+  border-collapse: collapse;
+  table-layout: auto !important; /* Ensures dynamic column sizing */
+  overflow-x: auto !important; /* Prevents breaking */
+}
+
+/* Improve table appearance */
+.post-content th,
+.post-content td {
+  padding: 12px !important;
+  white-space: nowrap !important; /* Prevents text wrapping */
+  overflow: hidden !important;
+  text-overflow: ellipsis !important; /* Adds '...' for long text */
+  border: 1px solid #ddd;
+}
+
+/* Adjust column widths dynamically */
+.post-content th:nth-child(1),
+.post-content td:nth-child(1) { /* Title Column */
+  width: 30% !important;
+}
+
+.post-content th:nth-child(2),
+.post-content td:nth-child(2) { /* Description Column */
+  width: 55% !important;
+}
+
+.post-content th:nth-child(3),
+.post-content td:nth-child(3) { /* Link Column */
+  width: 15% !important;
+  text-align: center;
+}
+
+/* Ensure scrolling works for smaller screens */
+@media (max-width: 768px) {
+  .post-content table {
+    display: block;
+    overflow-x: scroll !important;
+    white-space: nowrap;
   }
-  
-  .footer-credit a:hover {
-    text-decoration: underline;
-  }
-  
-  .footer-credit img {
-    width: 20px; /* Same size as inline styles */
-    vertical-align: middle;
-    margin: 0 5px;
-  }
-  
+}
