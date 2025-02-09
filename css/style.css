@@ -220,9 +220,9 @@ code {
   padding: 0 20px;
 }
 .container-inner {
-  max-width: 1120px;
-  min-width: 320px;
-  width: 150%;
+  max-width: 1400px /* Increase max width for better table fit */;
+  min-width: 900px;
+  width: 90%;
   margin: 0 auto;
 }
 .container-inner:before,
@@ -288,34 +288,10 @@ code {
 .footer-credit a:hover {
   text-decoration: underline;
 }
-.green-box {
-  display: inline-block;
-  background-color: #4caf50;
-  color: #fff;
-  padding: 15px 25px;
-  border-radius: 25px;
-  font-size: 18px;
-  font-weight: bold;
-  text-align: center;
-  text-decoration: none;
-  -webkit-transition: all 0.3s ease;
-  -moz-transition: all 0.3s ease;
-  -ms-transition: all 0.3s ease;
-  transition: all 0.3s ease;
-  -webkit-box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-}
-.green-box:hover {
-  background-color: #45a049;
-  -webkit-box-shadow: 0 6px 10px rgba(0,0,0,0.15);
-  box-shadow: 0 6px 10px rgba(0,0,0,0.15);
-  -webkit-transform: translateY(-2px);
-  -moz-transform: translateY(-2px);
-  -ms-transform: translateY(-2px);
-  transform: translateY(-2px);
-}
 #main {
-  width: 100%;
+  width: 90%;
+  max-width: 1400px;
+  margin: 0 auto;
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box;
@@ -524,44 +500,6 @@ code {
   margin-right: 8px;
   color: rgba(255,255,255,0.7);
   font: normal normal normal 16px/1 FontAwesome;
-}
-.search-form-input,
-.search-form-input.ins-search-input,
-.search-form-input.st-ui-search-input,
-.search-form-input.st-default-search-input {
-  -webkit-appearance: textarea;
-  padding: 0;
-  width: 100px;
-  height: auto !important;
-  border: none !important;
-  outline: none !important;
-  background: none !important;
-  line-height: 1.6em;
-  -webkit-transition: 0.2s ease-in;
-  -moz-transition: 0.2s ease-in;
-  -ms-transition: 0.2s ease-in;
-  transition: 0.2s ease-in;
-  font: 16px "Titillium Web", "Helvetica Neue", Helvetica, Arial, "Microsoft Yahei", sans-serif;
-  color: rgba(255,255,255,0.7);
-}
-.search-form-input:focus,
-.search-form-input.ins-search-input:focus,
-.search-form-input.st-ui-search-input:focus,
-.search-form-input.st-default-search-input:focus {
-  width: 200px;
-}
-.search-form-input::-webkit-search-results-decoration,
-.search-form-input.ins-search-input::-webkit-search-results-decoration,
-.search-form-input.st-ui-search-input::-webkit-search-results-decoration,
-.search-form-input.st-default-search-input::-webkit-search-results-decoration,
-.search-form-input::-webkit-search-cancel-button,
-.search-form-input.ins-search-input::-webkit-search-cancel-button,
-.search-form-input.st-ui-search-input::-webkit-search-cancel-button,
-.search-form-input.st-default-search-input::-webkit-search-cancel-button {
-  -webkit-appearance: none;
-}
-.search-form-submit {
-  display: none;
 }
 .article-single {
   padding: 30px 30px 20px;
@@ -1532,7 +1470,7 @@ i.icon:before {
     display: block !important;
   }
 }
-@media only screen and (min-width: 480px) and (max-width: 959px) {
+@media only screen and (min-width: 480px) and (max-width: 1200px) {
   #header {
     padding-bottom: 50px;
   }
@@ -1542,9 +1480,6 @@ i.icon:before {
   #header .nav-container-inner #main-nav .main-nav-more > ul .main-nav-list-child {
     position: relative;
     padding: 0px;
-  }
-  #header .nav-container-inner .search-form-input:focus {
-    width: 100px;
   }
   .main-body {
     margin-top: -50px;
@@ -1792,5 +1727,62 @@ i.icon:before {
   }
   #footer .credit {
     text-align: center;
+  }
+}
+/* --- 📌 ARTICLES TABLE FIX --- */
+.articles-table-container {
+  width: 100%;
+  max-width: 1400px /* Wider table */;
+  margin: 0 auto;
+  overflow-x: auto /* Allow scrolling if needed */;
+}
+.articles-table {
+  width: 100%;
+  border-collapse: collapse;
+  table-layout: fixed /* Keep column widths fixed */;
+}
+/* --- Table headers and rows --- */
+.articles-table th,
+.articles-table td {
+  padding: 12px;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+}
+/* --- Ensure the Link column does NOT break into multiple lines --- */
+.articles-table td:nth-child(3),
+.articles-table th:nth-child(3) {
+  width: 15% /* Ensures the column is wide enough */;
+  text-align: right;
+  white-space: nowrap /* Forces content to stay on one line */;
+  overflow: hidden;
+  text-overflow: ellipsis /* Add "..." if too long */;
+  display: -webkit-box;
+  display: -moz-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: box;
+  display: flex;
+  -webkit-box-pack: end;
+  -moz-box-pack: end;
+  -ms-flex-pack: end;
+  -webkit-justify-content: flex-end;
+  justify-content: flex-end;
+}
+/* --- Balance Title and Description columns --- */
+.articles-table td:nth-child(1),
+.articles-table th:nth-child(1) {
+  width: 30%;
+  white-space: normal;
+}
+.articles-table td:nth-child(2),
+.articles-table th:nth-child(2) {
+  width: 55%;
+  white-space: normal;
+}
+/* --- Responsive Fix for Small Screens --- */
+@media screen and (max-width: 900px) {
+  .articles-table-container {
+    width: 100%;
+    overflow-x: auto;
   }
 }
