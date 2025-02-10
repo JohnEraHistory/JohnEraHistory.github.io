@@ -207,22 +207,23 @@ body {
   -webkit-text-size-adjust: 100%;
 }
 code {
-  margin: 0 2px;
+  margin: 0 0.125em;
   color: #e96900;
-  padding: 3px 5px;
+  padding: 0.1875em 0.3125em;
   font-size: 0.8em;
-  border-radius: 2px;
+  border-radius: 0.125em;
   font-family: "Source Code Pro", Consolas, Monaco, Menlo, Consolas, monospace;
   background-color: #f8f8f8;
 }
 .container {
   position: relative;
-  padding: 0 20px;
+  padding: 0 1em;
+  max-width: 1200px;
+  margin: 0 auto;
 }
 .container-inner {
-  max-width: 1400px /* Increase max width for better table fit */;
-  min-width: 900px;
-  width: 90%;
+  width: 100%;
+  padding: 0 1em;
   margin: 0 auto;
 }
 .container-inner:before,
@@ -234,28 +235,55 @@ code {
   clear: both;
 }
 .left,
-.alignleft {
-  float: left;
-}
+.alignleft,
 .right,
 .alignright {
-  float: right;
+  float: none;
+  display: -webkit-box;
+  display: -moz-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: box;
+  display: flex;
+  -webkit-box-pack: center;
+  -moz-box-pack: center;
+  -ms-flex-pack: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+}
+@media (min-width: 48em) {
+  .left,
+  .alignleft {
+    -webkit-box-pack: start;
+    -moz-box-pack: start;
+    -ms-flex-pack: start;
+    -webkit-justify-content: flex-start;
+    justify-content: flex-start;
+  }
+  .right,
+  .alignright {
+    -webkit-box-pack: end;
+    -moz-box-pack: end;
+    -ms-flex-pack: end;
+    -webkit-justify-content: flex-end;
+    justify-content: flex-end;
+  }
 }
 .clear {
   clear: both;
 }
 .logo {
   display: block;
-  padding: 10px 0;
+  padding: 0.625em 0;
   width: 150px;
   height: 150px;
   background-image: url("/images/SiteIcon.png");
-  background-position: 0px 10px;
+  background-position: 0 0.625em;
   background-repeat: no-repeat;
   background-size: 150px 150px;
 }
 .main-body {
-  margin-top: -60px;
+  margin-top: -nav-height;
   background-color: #fff;
 }
 .main-body-inner {
@@ -263,8 +291,8 @@ code {
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box;
-  -webkit-box-shadow: rgba(0,0,0,0.098) 0px 1px 1px 0px;
-  box-shadow: rgba(0,0,0,0.098) 0px 1px 1px 0px;
+  -webkit-box-shadow: rgba(0,0,0,0.098) 0 0.0625em 0.0625em 0;
+  box-shadow: rgba(0,0,0,0.098) 0 0.0625em 0.0625em 0;
 }
 .main-body-inner:before,
 .main-body-inner:after {
@@ -276,10 +304,10 @@ code {
 }
 .footer-credit {
   text-align: center;
-  font-size: 12px;
+  font-size: 0.75em;
   color: #808080;
-  margin-top: 20px;
-  padding: 10px 0;
+  margin-top: 1.25em;
+  padding: 0.625em 0;
 }
 .footer-credit a {
   color: #808080;
@@ -289,28 +317,28 @@ code {
   text-decoration: underline;
 }
 #main {
-  width: 90%;
-  max-width: 1400px;
+  width: 100%;
+  max-width: 100%;
   margin: 0 auto;
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box;
-  min-height: 600px;
+  min-height: 37.5em;
 }
 #main .main-body-header {
   background: #fff;
   position: relative;
-  padding: 18px 30px 17px;
-  border-bottom: 1px solid #eee;
+  padding: 1.125em 1.875em 1.0625em;
+  border-bottom: 0.0625em solid #eee;
   color: #666;
-  font-size: 16px;
+  font-size: 1em;
   font-weight: 600;
   text-transform: uppercase;
-  line-height: 24px;
+  line-height: 1.5em;
 }
 #main .main-body-header .page-title-link,
 #main .main-body-header i {
-  margin-right: 8px;
+  margin-right: 0.5em;
 }
 #main .main-body-header i {
   font-weight: 400;
@@ -327,7 +355,6 @@ code {
 #main .main-body-content:after {
   clear: both;
 }
-/* Centering the green box */
 .center-container {
   display: -webkit-box;
   display: -moz-box;
@@ -345,16 +372,15 @@ code {
   -ms-flex-align: center;
   -webkit-align-items: center;
   align-items: center;
-  height: 200px; /* Adjust as needed */
+  height: 12.5em;
 }
-/* Green button styling */
 .green-box {
   display: inline-block;
-  background-color: #4caf50; /* Green */
+  background-color: #4caf50;
   color: #fff;
-  padding: 15px 30px;
-  border-radius: 25px;
-  font-size: 18px;
+  padding: 0.9375em 1.875em;
+  border-radius: 1.5625em;
+  font-size: 1.125em;
   font-weight: bold;
   text-align: center;
   text-decoration: none;
@@ -362,24 +388,22 @@ code {
   -moz-transition: all 0.3s ease-in-out;
   -ms-transition: all 0.3s ease-in-out;
   transition: all 0.3s ease-in-out;
-  -webkit-box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+  -webkit-box-shadow: 0 0.25em 0.375em rgba(0,0,0,0.1);
+  box-shadow: 0 0.25em 0.375em rgba(0,0,0,0.1);
 }
-/* Hover effect */
 .green-box:hover {
   background-color: #45a049;
-  -webkit-box-shadow: 0 6px 10px rgba(0,0,0,0.2);
-  box-shadow: 0 6px 10px rgba(0,0,0,0.2);
-  -webkit-transform: translateY(-2px);
-  -moz-transform: translateY(-2px);
-  -ms-transform: translateY(-2px);
-  transform: translateY(-2px);
+  -webkit-box-shadow: 0 0.375em 0.625em rgba(0,0,0,0.2);
+  box-shadow: 0 0.375em 0.625em rgba(0,0,0,0.2);
+  -webkit-transform: translateY(-0.125em);
+  -moz-transform: translateY(-0.125em);
+  -ms-transform: translateY(-0.125em);
+  transform: translateY(-0.125em);
 }
-/* Optional: Make button responsive */
-@media (max-width: 768px) {
+@media (max-width: 48em) {
   .green-box {
-    font-size: 16px;
-    padding: 12px 25px;
+    font-size: 1em;
+    padding: 0.75em 1.5625em;
   }
 }
 #header {
@@ -1784,33 +1808,31 @@ i.icon:before {
     text-align: center;
   }
 }
-/* --- 📌 ARTICLES TABLE FIX --- */
 .articles-table-container {
   width: 100%;
-  max-width: 1400px /* Wider table */;
+  max-width: 100%;
   margin: 0 auto;
-  overflow-x: auto /* Allow scrolling if needed */;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
 }
 .articles-table {
   width: 100%;
   border-collapse: collapse;
-  table-layout: fixed /* Keep column widths fixed */;
+  table-layout: auto;
 }
-/* --- Table headers and rows --- */
 .articles-table th,
 .articles-table td {
-  padding: 12px;
+  padding: 0.75em;
   text-align: left;
-  border-bottom: 1px solid #ddd;
+  border-bottom: 0.0625em solid #ddd;
 }
-/* --- Ensure the Link column does NOT break into multiple lines --- */
 .articles-table td:nth-child(3),
 .articles-table th:nth-child(3) {
-  width: 15% /* Ensures the column is wide enough */;
+  width: 15%;
   text-align: right;
-  white-space: nowrap /* Forces content to stay on one line */;
+  white-space: nowrap;
   overflow: hidden;
-  text-overflow: ellipsis /* Add "..." if too long */;
+  text-overflow: ellipsis;
   display: -webkit-box;
   display: -moz-box;
   display: -webkit-flex;
@@ -1823,7 +1845,6 @@ i.icon:before {
   -webkit-justify-content: flex-end;
   justify-content: flex-end;
 }
-/* --- Balance Title and Description columns --- */
 .articles-table td:nth-child(1),
 .articles-table th:nth-child(1) {
   width: 30%;
@@ -1834,8 +1855,7 @@ i.icon:before {
   width: 55%;
   white-space: normal;
 }
-/* --- Responsive Fix for Small Screens --- */
-@media screen and (max-width: 900px) {
+@media screen and (max-width: 56.25em) {
   .articles-table-container {
     width: 100%;
     overflow-x: auto;
