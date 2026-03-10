@@ -29,3 +29,4 @@ def rename_files_in_folder(folder_path):
 # Specify the folder path
 folder_path = "source\\articles\\pdfs"  # Replace this with your folder path
 rename_files_in_folder(folder_path)
+
